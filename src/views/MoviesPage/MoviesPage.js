@@ -9,7 +9,20 @@ class MoviesPageView extends Component {
         movies: [],
         error: null,
     };
-    
+    componentDidMount() {
+        if (localStorage.getItem('movies') !== null) {
+            const firstMovies = localStorage.getItem('movies');
+            const parsedMovies = JSON.parse(firstMovies)
+            console.log(parsedMovies)
+            this.setState({
+                movies: parsedMovies,
+            })
+        }
+        if (localStorage.getItem('movies') === null) {console.log("пусто")}
+
+        console.log("did_mount");
+    }
+
     componentDidUpdate(prevProps, prevState) {
         if (prevState.query !== this.state.query) {
         this.onSubmitHandler()
@@ -35,7 +48,9 @@ class MoviesPageView extends Component {
     })
         .catch(error => this.setState({ error }))
   };
-    
+    componentWillUnmount() {
+        this.state.movies.length > 0 && localStorage.setItem('movies', JSON.stringify(this.state.movies))
+    }
     render() {
         const { movies } = this.state;
 
