@@ -68,9 +68,23 @@ class MovieDetailsPageView extends Component {
                     onClick={this.onClick}
                 />
                 <h1>Additional information</h1>
-                <ul>
-                    <li><NavLink to={`${match.url}/credits`}>Cast</NavLink></li>
-                    <li><NavLink to={`${match.url}/reviews`}>Reviews</NavLink></li>
+                <ul className="AppBarList">
+                    <li className="AppBarComponent">
+                        <NavLink
+                            className="NavLink"
+                            activeClassName="NavLink--active"
+                            to={`${match.url}/credits`}>
+                            Cast
+                        </NavLink>
+                    </li>
+                    <li className="AppBarComponent">
+                        <NavLink
+                            className="NavLink"
+                            activeClassName="NavLink--active"
+                            to={`${match.url}/reviews`}>
+                            Reviews
+                        </NavLink>
+                    </li>
                 </ul>
 
                     <Route

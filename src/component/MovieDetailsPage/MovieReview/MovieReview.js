@@ -5,7 +5,8 @@ const MovieReview = ({ reviews }) => {
             <>
                 {reviews.length > 0 ? (<ul>
                     {reviews.map(review =>
-                        <li key={review.id}>
+                        <li key={review.id}
+                        className="AppBarComponent">
                             <h2>Author: {review.author}</h2>
                             <p>Review: {review.content}</p>
                         </li>)}

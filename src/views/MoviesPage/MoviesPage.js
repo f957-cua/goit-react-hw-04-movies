@@ -13,7 +13,7 @@ class MoviesPageView extends Component {
         if (localStorage.getItem('movies') !== null) {
             const firstMovies = localStorage.getItem('movies');
             const parsedMovies = JSON.parse(firstMovies)
-            console.log(parsedMovies)
+
             this.setState({
                 movies: parsedMovies,
             })

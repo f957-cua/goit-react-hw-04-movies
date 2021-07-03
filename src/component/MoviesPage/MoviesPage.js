@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import './MoviesPage.css';
 import MoviePreview from '../MoviePreview';
 
@@ -8,16 +8,17 @@ const MoviesPage = ({movies, location}) => {
         <ul className="MoviesList">
             {movies.map(({id, title, poster_path}) => (
                 <li key={id}>
-                    <Link to={{
+                    <NavLink to={{
                         pathname: `movies/${id}`,
                         state: {
                             from: location
                         }
-                    }}>
+                    }}
+                    className="NavLink">
                         <MoviePreview
                             posterPath={poster_path}
                             title={title}/>
-                    </Link>
+                    </NavLink>
                 </li>
             ))}
         </ul>

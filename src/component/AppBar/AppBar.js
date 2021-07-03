@@ -14,7 +14,7 @@ const AppBar = () => {
                     Home
             </NavLink>
             </li>
-            <li>
+            <li className="AppBarComponent">
             <NavLink
                 to={routes.movies}
                 className="NavLink"

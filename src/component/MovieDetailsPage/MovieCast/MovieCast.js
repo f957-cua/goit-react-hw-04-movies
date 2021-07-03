@@ -7,7 +7,8 @@ const MovieCast = ({ casts }) => {
             <>
                 <ul className="MovieCast">
                     {casts.map(cast =>
-                        <li key={cast.id}>
+                        <li key={cast.id}
+                        className="AppBarComponent">
                             <img
                                 src={`https://www.themoviedb.org/t/p/w500${cast.profile_path}`} alt={cast.name}
                                 />
