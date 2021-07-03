@@ -18,9 +18,6 @@ class MoviesPageView extends Component {
                 movies: parsedMovies,
             })
         }
-        if (localStorage.getItem('movies') === null) {console.log("пусто")}
-
-        console.log("did_mount");
     }
 
     componentDidUpdate(prevProps, prevState) {
